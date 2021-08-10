@@ -12,7 +12,7 @@
           <Property Name="AreaId" Type="int" Nullable="false" />
           <Property Name="AreaName" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="CityId" Type="int" Nullable="false" />
-          <Property Name="Pincode" Type="varbinary" MaxLength="5" Nullable="false" />
+          <Property Name="Pincode" Type="varchar" MaxLength="5" Nullable="false" />
         </EntityType>
         <EntityType Name="Cities">
           <Key>
@@ -53,7 +53,7 @@
           <Property Name="AreaName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CityId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="City" Relationship="Self.FK_Areas_Cities" FromRole="Areas" ToRole="Cities" />
-          <Property Name="Pincode" Type="Binary" Nullable="false" MaxLength="5" FixedLength="false" />
+          <Property Name="Pincode" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="City">
           <Key>
