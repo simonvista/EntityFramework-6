@@ -53,10 +53,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Area.cs">
+      <DependentUpon>Location.tt</DependentUpon>
+    </Compile>
+    <Compile Include="City.cs">
+      <DependentUpon>Location.tt</DependentUpon>
+    </Compile>
     <Compile Include="Location.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Location.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Location.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Location.tt</DependentUpon>
     </Compile>
     <Compile Include="Location.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -81,6 +92,12 @@
     <Content Include="Location.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Location.Context.cs</LastGenOutput>
+      <DependentUpon>Location.edmx</DependentUpon>
+    </Content>
+    <Content Include="Location.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Location.edmx</DependentUpon>
+      <LastGenOutput>Location.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
