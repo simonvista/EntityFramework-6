@@ -34,7 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Db1st.LazyLoading</StartupObject>
+    <StartupObject>Db1st.EagerLoading</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -63,6 +63,7 @@
       <DependentUpon>Location.tt</DependentUpon>
     </Compile>
     <Compile Include="Crud.cs" />
+    <Compile Include="EagerLoading.cs" />
     <Compile Include="LazyLoading.cs" />
     <Compile Include="Location.Context.cs">
       <AutoGen>True</AutoGen>
