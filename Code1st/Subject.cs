@@ -8,7 +8,7 @@ namespace Code1st
 {
     class Subject
     {
-        public int Subjectid { get; set; }
+        public int SubjectId { get; set; }
         public string Name { get; set; }
         public int Marks { get; set; }
         //navigation property: many subjects <-> many projects

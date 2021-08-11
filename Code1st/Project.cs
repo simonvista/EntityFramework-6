@@ -15,6 +15,6 @@ namespace Code1st
         public float Fees { get; set; }
         //navigation property: one project -> many students, many subjects <-> many projects
         public virtual ICollection<Student> Students { get; set; }
-        public virtual ICollection<Project> Projects { get; set; }
+        public virtual ICollection<Subject> Subjects { get; set; }
     }
 }

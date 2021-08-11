@@ -10,6 +10,7 @@ namespace Code1st
     class MyDbContext:DbContext
     {
         // StudentDB will be the name of DB
+        // w/o connectionString defined, StudentDB will be created on localdb rather than .
         public MyDbContext():base("StudentDB")
         {
 
