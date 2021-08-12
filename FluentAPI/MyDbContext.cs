@@ -50,13 +50,23 @@ namespace FluentAPI
             //model config (one-to-many relationship b/w Department & Employee entities)
             modelBuilder.Entity<Department>().HasMany(dpt => dpt.Employees)
                                              .WithRequired(emp => emp.Department)
-                                            .HasForeignKey(emp=>emp.DepartmentId); 
+                                             .HasForeignKey(emp=>emp.DepartmentId); 
             //model config (one-to-many relationship b/w Team & Employee entities)
             modelBuilder.Entity<Team>().HasMany(tm => tm.Employees)
-                                        .WithOptional(em => em.Team)
-                                        .HasForeignKey(em => em.TeamId);
+                                       .WithOptional(em => em.Team)
+                                       .HasForeignKey(em => em.TeamId);
 
-
+            //model config (many-to-many relationship b/w Project & Employee entities)
+            modelBuilder.Entity<Project>().HasMany(p => p.Employees)
+                                          .WithMany(e => e.Projects)
+                                          .Map(ep=> {
+                                              //foreignkeys
+                                              //left -> 1st table
+                                              ep.MapLeftKey("ProjectID");
+                                              ep.MapRightKey("EmployeeID");
+                                              //3rd table w/ foreignkeys
+                                              ep.ToTable("ProjectsAndEmployees");
+                                          });
         }
     }
 }
