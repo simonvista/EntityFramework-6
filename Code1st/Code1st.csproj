@@ -60,6 +60,10 @@
     <Compile Include="Migrations\202108121746128_addEmailToStudentTable.designer.cs">
       <DependentUpon>202108121746128_addEmailToStudentTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108121805388_addTeacherToDB.cs" />
+    <Compile Include="Migrations\202108121805388_addTeacherToDB.designer.cs">
+      <DependentUpon>202108121805388_addTeacherToDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyDbContext.cs" />
     <Compile Include="Program.cs" />
@@ -68,6 +72,7 @@
     <Compile Include="Student.cs" />
     <Compile Include="StudentAddress.cs" />
     <Compile Include="Subject.cs" />
+    <Compile Include="Teacher.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -80,6 +85,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108121746128_addEmailToStudentTable.resx">
       <DependentUpon>202108121746128_addEmailToStudentTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108121805388_addTeacherToDB.resx">
+      <DependentUpon>202108121805388_addTeacherToDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

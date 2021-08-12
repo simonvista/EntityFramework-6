@@ -21,5 +21,7 @@ namespace Code1st
         //public virtual DbSet<StudentAddress> StudentAddresses { get; set; }
         public virtual DbSet<Project> Projects { get; set; }
         public virtual DbSet<Subject> Subjects { get; set; }
+
+        public virtual DbSet<Teacher> Teachers { get; set; }
     }
 }
