@@ -39,6 +39,12 @@ namespace FluentAPI
                                                                         .HasColumnType("varchar");
             modelBuilder.Entity<Employee>().Property(emp => emp.PrimaryContact).IsRequired()
                                                                                 .HasMaxLength(10);
+
+            //set EmployeeId as PK
+            modelBuilder.Entity<EmployeeAddress>().HasKey(adr => adr.EmployeeId);
+            //model config (one-to-one relationship b/w Employee & EmployeeAddress entities)
+            modelBuilder.Entity<Employee>().HasOptional(emp => emp.EmployeeAddress)
+                                            .WithRequired(adr => adr.Employee);            
                                                                                                             
         }
     }

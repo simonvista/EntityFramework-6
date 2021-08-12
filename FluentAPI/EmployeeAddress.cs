@@ -9,6 +9,7 @@ namespace FluentAPI
 {
     class EmployeeAddress
     {
+        //EmploeeId isn't PK b/c it isn't following <className>Id naming convention
         //[Key]
         public int EmployeeId { get; set; }
         public string AddressLine1 { get; set; }
