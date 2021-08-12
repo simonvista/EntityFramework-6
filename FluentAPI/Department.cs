@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ namespace FluentAPI
 {
     class Department
     {
+        //[Key]
         //DeptId is not PK b/c it isn't following <className>Id naming convention
         public int DeptId { get; set; }
         public string DeptName { get; set; }

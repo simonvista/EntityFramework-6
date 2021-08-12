@@ -14,6 +14,11 @@ namespace FluentAPI
         public string Email { get; set; }
         public string PrimaryContact { get; set; }
         public string SecondaryContact { get; set; }
+
+        //foreign keys
+        public int DepartmentId { get; set; }
+        public int? TeamId { get; set; }
+
         //navigation property
         //one emp has one dept
         public virtual Department Department { get; set; }

@@ -42,10 +42,20 @@ namespace FluentAPI
 
             //set EmployeeId as PK
             modelBuilder.Entity<EmployeeAddress>().HasKey(adr => adr.EmployeeId);
+
             //model config (one-to-one relationship b/w Employee & EmployeeAddress entities)
             modelBuilder.Entity<Employee>().HasOptional(emp => emp.EmployeeAddress)
-                                            .WithRequired(adr => adr.Employee);            
-                                                                                                            
+                                           .WithRequired(adr => adr.Employee);
+
+            //model config (one-to-many relationship b/w Department & Employee entities)
+            modelBuilder.Entity<Department>().HasMany(dpt => dpt.Employees)
+                                             .WithRequired(emp => emp.Department)
+                                            .HasForeignKey(emp=>emp.DepartmentId); //DeptId?
+
+            //model config (one-to-many relationship b/w Team & Employee entities)
+            modelBuilder.Entity<Team>().HasMany(tm => tm.Employees)
+                                        .WithOptional(em => em.Team)
+                                        .HasForeignKey(em => em.TeamId);
         }
     }
 }
