@@ -15,7 +15,7 @@ namespace FluentAPI
         public string PrimaryContact { get; set; }
         public string SecondaryContact { get; set; }
 
-        //foreign keys
+        //foreign keys (one-to-many)
         public int DepartmentId { get; set; }
         public int? TeamId { get; set; }
 
