@@ -50,7 +50,8 @@ namespace FluentAPI
             //model config (one-to-many relationship b/w Department & Employee entities)
             modelBuilder.Entity<Department>().HasMany(dpt => dpt.Employees)
                                              .WithRequired(emp => emp.Department)
-                                             .HasForeignKey(emp=>emp.DepartmentId); 
+                                             .HasForeignKey(emp=>emp.DepartmentId)
+                                             .WillCascadeOnDelete(false); //turn off automatical cascade delete by default -> delete all records w/ the foreign key in child table, then delete the record w/ the same forein key in parent table ; 
             //model config (one-to-many relationship b/w Team & Employee entities)
             modelBuilder.Entity<Team>().HasMany(tm => tm.Employees)
                                        .WithOptional(em => em.Team)
