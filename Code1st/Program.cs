@@ -14,7 +14,7 @@ namespace Code1st
             {
                 MyDbContext db = new MyDbContext();
                 Project project = new Project();
-                project.Title = "ASP.NET";
+                project.Title = "ASP.NET Core";
                 project.Duration = 4;
                 project.Fees = 500000;
                 db.Projects.Add(project);
